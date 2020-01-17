@@ -9,31 +9,86 @@
 import Foundation
 
 enum MasterViewModelResult {
-    case albums([Album])
     case cacheDate(String)
+    case done
 }
 
 protocol MasterViewCoordinatorDelegate {
-    func showDetail(from album: Album?)
+    func showDetail(from album: RMAlbum?)
 }
 
+
 class MasterViewModel {
-    let searchService: SearchService = SearchService()
+    var dataSource: AlbumsDataSource
+    var timeValidity: TimeInterval = 10//60 * 1 // 60 seconds
+    
+    let searchNetwork: SearchNetwork = SearchNetwork()
     
     var coordinatorDelegate: MasterViewCoordinatorDelegate?
     var resultClosure: ((MasterViewModelResult)->())?
     
+    init(source: AlbumsDataSource) {
+        self.dataSource = source
+    }
+    
     func loadData() {
+        let currentTime = Date()
+        guard let latestResult: RMAlbumResult = RealmServices.shared.getObjects().last else {
+            requestList()
+            return
+        }
+        
+        let isUpToDate = currentTime.isWithin(timeValidity, after: Date.date(from: latestResult.dateSaved))
+        
+        if !isUpToDate {
+            //print("passed more than a 5 minutess: Update!")
+            requestList()
+        }
+        else {
+            //print("less than a 5 minutes, do not update")
+            self.dataSource.data = Array(latestResult.results)
+            self.resultClosure?(.done)
+            self.resultClosure?(.cacheDate(latestResult.dateSaved))
+        }
+        
+        
+    }
+    
+    private func requestList() {
         let parameters = ParameterBuilder()
             .add(value: "star", for: SearchKey.term)
             .add(value: "au", for: SearchKey.country)
             .add(value: "movie", for: SearchKey.media)
             .limit("40")
             .build()
-        searchService.list(with: parameters, complete: { (values, cacheDate) in
-            let albums = values.compactMap({ Album(json: $0) })
-            self.resultClosure?(.albums(albums))
-            self.resultClosure?(.cacheDate(cacheDate))
+        
+        searchNetwork.list(with: parameters, complete: { (value) in
+            
+            /// Save result
+            let rmAlbumResult = RMAlbumResult()
+            rmAlbumResult.dateSaved = Date.getGMTTimestamp()
+            let albums = Array(value.results.compactMap({ $0 }) )
+            albums.forEach { (album) in
+                //Save to realm
+                let rmAlbum = RMAlbum()
+                rmAlbum.trackName = album.trackName ?? ""
+                rmAlbum.artworkLarge = album.artworkLarge ?? ""
+                rmAlbum.artworkMedium = album.artworkMedium ?? ""
+                rmAlbum.artworkSmall = album.artworkSmall ?? ""
+                rmAlbum.price.value = album.price
+                rmAlbum.genre = album.genre ?? ""
+                rmAlbum.desc = album.desc ?? ""
+                rmAlbum.currency = album.currency ?? ""
+                rmAlbum.trackId.value = album.trackId
+                rmAlbumResult.results.append(rmAlbum)
+            }
+            RealmServices.shared.saveRealm(rmAlbumResult)
+            
+            self.dataSource.data = Array(rmAlbumResult.results)
+            self.resultClosure?(.done)
+            self.resultClosure?(.cacheDate(rmAlbumResult.dateSaved))
+        }, fail: { rmAlbums in
+            
         })
     }
 }

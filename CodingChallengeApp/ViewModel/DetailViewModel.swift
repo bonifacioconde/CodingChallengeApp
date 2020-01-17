@@ -17,32 +17,48 @@ enum DetailViewModelResult {
 }
 
 class DetailViewModel {
-    var album: Album
-    let lookupService: LookupService = LookupService()
+    var album: RMAlbum
+    let lookupNetwork: LookupNetwork = LookupNetwork()
     var resultClosure: ((DetailViewModelResult)->())?
     
-    init(album: Album) {
+    init(album: RMAlbum) {
         self.album = album
     }
     
     func setupDisplay() {
-        func setupResult(from val: Album) {
+        func setupResult(from val: RMAlbum) {
             resultClosure?(.image(album.availableLargeImage()))
-            resultClosure?(.description(album.description))
+            resultClosure?(.description(album.desc))
             resultClosure?(.price(album.priceFormatted()))
             resultClosure?(.name(album.trackName))
             resultClosure?(.genre(album.genre))
         }
         
-        guard let trackId = album.trackId else {
+        guard let trackId = album.trackId.value else {
             setupResult(from: album)
             return
         }
         
         let parameter = ParameterBuilder().add(value: "\(trackId)", for: LookupKey.id).build()
-        lookupService.show(with: parameter, success:  { (items, cacheDate) in
-            if let lookUpAlbum = items.compactMap({ Album(json: $0) }).first {
-                setupResult(from: lookUpAlbum)
+        lookupNetwork.show(with: parameter, success:  { (values) in
+            if let lookUpAlbum = Array(values.results.compactMap({ $0 })).first {
+                
+                //Save to realm
+                let rmAlbum = RMAlbum()
+                rmAlbum.trackName = lookUpAlbum.trackName ?? ""
+                rmAlbum.artworkLarge = lookUpAlbum.artworkLarge ?? ""
+                rmAlbum.artworkMedium = lookUpAlbum.artworkMedium ?? ""
+                rmAlbum.artworkSmall = lookUpAlbum.artworkSmall ?? ""
+                rmAlbum.price.value = lookUpAlbum.price
+                rmAlbum.genre = lookUpAlbum.genre ?? ""
+                rmAlbum.desc = lookUpAlbum.desc ?? ""
+                rmAlbum.currency = lookUpAlbum.currency ?? ""
+                rmAlbum.trackId.value = lookUpAlbum.trackId 
+                RealmServices.shared.saveRealm(rmAlbum)
+                
+                setupResult(from: rmAlbum)
+            } else {
+                setupResult(from: self.album)
             }
         }, failure: {
             setupResult(from: self.album)

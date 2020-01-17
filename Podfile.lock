@@ -1,34 +1,60 @@
 PODS:
-  - Alamofire (4.8.2)
+  - Alamofire (4.9.1)
   - Kingfisher (4.10.1)
-  - Moya (10.0.2):
-    - Moya/Core (= 10.0.2)
-  - Moya/Core (10.0.2):
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Result (3.2.4)
-  - SwiftyJSON (3.1.4)
+    - Result (~> 4.1)
+  - Realm (4.3.0):
+    - Realm/Headers (= 4.3.0)
+  - Realm/Headers (4.3.0)
+  - RealmSwift (4.3.0):
+    - Realm (= 4.3.0)
+  - Result (4.1.0)
 
 DEPENDENCIES:
   - Kingfisher (~> 4.0)
-  - Moya (~> 10.0)
-  - SwiftyJSON (~> 3.0)
+  - Moya (~> 13.0)
+  - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `master`)
+  - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `master`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
+  https://github.com/CocoaPods/Specs.git:
     - Kingfisher
+  trunk:
+    - Alamofire
     - Moya
     - Result
-    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Realm:
+    :branch: master
+    :git: https://github.com/realm/realm-cocoa.git
+    :submodules: true
+  RealmSwift:
+    :branch: master
+    :git: https://github.com/realm/realm-cocoa.git
+    :submodules: true
+
+CHECKOUT OPTIONS:
+  Realm:
+    :commit: 5fad072e714486c37275373d3f202f54bb5658a9
+    :git: https://github.com/realm/realm-cocoa.git
+    :submodules: true
+  RealmSwift:
+    :commit: 5fad072e714486c37275373d3f202f54bb5658a9
+    :git: https://github.com/realm/realm-cocoa.git
+    :submodules: true
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
-  Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Realm: 9357c3589555793e1860a7104a7412bca4a48d99
+  RealmSwift: 402f1e379a8ef82c635313037b043f0f06de880c
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: a72b98e1cb9f7b3328916cdb1d1b58e663086da8
+PODFILE CHECKSUM: 322c6f952af3b903aaac220f9aa2f1cc5803c6d7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.3

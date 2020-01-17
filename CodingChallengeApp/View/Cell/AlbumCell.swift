@@ -15,7 +15,7 @@ class AlbumCell: UITableViewCell, ReusableView {
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var artworkImageView: UIImageView!
     
-    private(set) var album: Album? {
+    private(set) var album: RMAlbum? {
         didSet {
             self.genreLabel.text = "Genre: \(album?.genre ?? "")"
             self.trackNameLabel.text = "Track: \(album?.trackName ?? "")"
@@ -24,7 +24,7 @@ class AlbumCell: UITableViewCell, ReusableView {
         }
     }
     
-    func configureCell(with album: Album?) {
+    func configureCell(with album: RMAlbum?) {
         self.album = album
     }
 }
