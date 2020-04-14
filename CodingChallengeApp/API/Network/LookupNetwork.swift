@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias LookupSuccess = ((AlbumResult)->())
+typealias LookupSuccess = ((AlbumResult) -> Void)
 
 class LookupNetwork: BaseNetwork {
-    func show(with parameters: [String: Any], success: @escaping LookupSuccess, failure: @escaping (()->())) {
+    func show(with parameters: [String: Any], success: @escaping LookupSuccess, failure: @escaping (() -> Void)) {
         let service = LookupService.lookup(parameters: parameters)
         
         if !(network?.isReachable ?? true) {
@@ -23,5 +23,3 @@ class LookupNetwork: BaseNetwork {
         }
     }
 }
-
-

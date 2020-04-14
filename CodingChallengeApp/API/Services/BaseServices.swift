@@ -22,7 +22,7 @@ extension BaseService {
     /**
         The headers needed for the request
     */
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
     

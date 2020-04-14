@@ -13,16 +13,20 @@ enum LookupService {
     case lookup(parameters: [String: Any])
 }
 
-let LookupServiceProvider = MoyaProvider<LookupService>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])
+let LookupServiceProvider = MoyaProvider<LookupService>(
+  plugins: [
+    NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
+  ]
+)
 
 enum LookupKey: String, RawEnumProtocol {
-    case id = "id"
-    case amgArtistId = "amgArtistId"
-    case entity = "entity"
-    case sort = "sort"
-    case upc = "upc"
-    case amgAlbumId = "amgAlbumId"
-    case isbn = "isbn"
+    case id
+    case amgArtistId
+    case entity
+    case sort
+    case upc
+    case amgAlbumId
+    case isbn
     
     public var value: Any? {
         return self.rawValue
@@ -52,4 +56,3 @@ extension LookupService: BaseService {
         }
     }
 }
-

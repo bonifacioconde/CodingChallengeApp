@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		106282842EF7CAE47D75DDB0 /* Pods_CodingChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCB8BD6DBC5B82ED4FDB3C8 /* Pods_CodingChallengeApp.framework */; };
+		7FA1F19A9DD9C691CE0845F1 /* Pods_CodingChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9747D532F5AE58D845533B /* Pods_CodingChallengeApp.framework */; };
 		8B7C01A423CF794A00923A28 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C01A323CF794A00923A28 /* AppNavigationController.swift */; };
 		8B884E4A23D1ACA50056058B /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B884E4923D1ACA50056058B /* BaseDataSource.swift */; };
 		8B884E4C23D1ACB50056058B /* AlbumsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B884E4B23D1ACB50056058B /* AlbumsDataSource.swift */; };
@@ -42,8 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5524D019A84F3DACC7AC174C /* Pods-CodingChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallengeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodingChallengeApp/Pods-CodingChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
-		80BF5B73407664002D752915 /* Pods-CodingChallengeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallengeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodingChallengeApp/Pods-CodingChallengeApp.release.xcconfig"; sourceTree = "<group>"; };
+		174885502734E71ACE22AE3B /* Pods-CodingChallengeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallengeApp.release.xcconfig"; path = "Target Support Files/Pods-CodingChallengeApp/Pods-CodingChallengeApp.release.xcconfig"; sourceTree = "<group>"; };
+		1E9747D532F5AE58D845533B /* Pods_CodingChallengeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingChallengeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7C01A323CF794A00923A28 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		8B884E4923D1ACA50056058B /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		8B884E4B23D1ACB50056058B /* AlbumsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsDataSource.swift; sourceTree = "<group>"; };
@@ -54,7 +54,6 @@
 		8B891C1123D15A210009C4A4 /* BaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServices.swift; sourceTree = "<group>"; };
 		8B891C1323D16A960009C4A4 /* SearchNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetwork.swift; sourceTree = "<group>"; };
 		8B891C1523D16B0A0009C4A4 /* LookupNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupNetwork.swift; sourceTree = "<group>"; };
-		CCCB8BD6DBC5B82ED4FDB3C8 /* Pods_CodingChallengeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingChallengeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30F9C5D22FF204F00262900 /* CodingChallengeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingChallengeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30F9C6022FF204F00262900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F30F9C6922FF205000262900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		F30F9C9522FF20E700262900 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		F30F9C9622FF20E700262900 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		F30F9CB122FF24A600262900 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F6DECAC5B0E198324B2C21AA /* Pods-CodingChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallengeApp.debug.xcconfig"; path = "Target Support Files/Pods-CodingChallengeApp/Pods-CodingChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,20 +85,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				106282842EF7CAE47D75DDB0 /* Pods_CodingChallengeApp.framework in Frameworks */,
+				7FA1F19A9DD9C691CE0845F1 /* Pods_CodingChallengeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4296E59308AD5E62315EEB64 /* Pods */ = {
+		15F4942F5EA740C524295A6F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5524D019A84F3DACC7AC174C /* Pods-CodingChallengeApp.debug.xcconfig */,
-				80BF5B73407664002D752915 /* Pods-CodingChallengeApp.release.xcconfig */,
+				F6DECAC5B0E198324B2C21AA /* Pods-CodingChallengeApp.debug.xcconfig */,
+				174885502734E71ACE22AE3B /* Pods-CodingChallengeApp.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		58AFA1984D5A938F22A35C65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E9747D532F5AE58D845533B /* Pods_CodingChallengeApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8B884E4823D1AC860056058B /* DataSource */ = {
@@ -130,22 +138,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		935E5414D2CA30236B4EB3BD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CCCB8BD6DBC5B82ED4FDB3C8 /* Pods_CodingChallengeApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F30F9C5422FF204F00262900 = {
 			isa = PBXGroup;
 			children = (
 				F30F9CB122FF24A600262900 /* README.md */,
 				F30F9C5F22FF204F00262900 /* CodingChallengeApp */,
 				F30F9C5E22FF204F00262900 /* Products */,
-				4296E59308AD5E62315EEB64 /* Pods */,
-				935E5414D2CA30236B4EB3BD /* Frameworks */,
+				15F4942F5EA740C524295A6F /* Pods */,
+				58AFA1984D5A938F22A35C65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,11 +261,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F30F9C7122FF205000262900 /* Build configuration list for PBXNativeTarget "CodingChallengeApp" */;
 			buildPhases = (
-				6A9C19C8A0CB5F9754D1AD4D /* [CP] Check Pods Manifest.lock */,
+				C7CF41368A728B34FED07879 /* [CP] Check Pods Manifest.lock */,
 				F30F9C5922FF204F00262900 /* Sources */,
 				F30F9C5A22FF204F00262900 /* Frameworks */,
 				F30F9C5B22FF204F00262900 /* Resources */,
-				64556DB23363C9A9E2CA14FD /* [CP] Embed Pods Frameworks */,
+				446DEDE9601A298C62E60107 /* [CP] Embed Pods Frameworks */,
+				8BB9FB16244575A7005F5C7F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -324,7 +325,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		64556DB23363C9A9E2CA14FD /* [CP] Embed Pods Frameworks */ = {
+		446DEDE9601A298C62E60107 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -341,7 +342,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodingChallengeApp/Pods-CodingChallengeApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A9C19C8A0CB5F9754D1AD4D /* [CP] Check Pods Manifest.lock */ = {
+		8BB9FB16244575A7005F5C7F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		C7CF41368A728B34FED07879 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -540,7 +558,7 @@
 		};
 		F30F9C7222FF205000262900 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5524D019A84F3DACC7AC174C /* Pods-CodingChallengeApp.debug.xcconfig */;
+			baseConfigurationReference = F6DECAC5B0E198324B2C21AA /* Pods-CodingChallengeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -559,7 +577,7 @@
 		};
 		F30F9C7322FF205000262900 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80BF5B73407664002D752915 /* Pods-CodingChallengeApp.release.xcconfig */;
+			baseConfigurationReference = 174885502734E71ACE22AE3B /* Pods-CodingChallengeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

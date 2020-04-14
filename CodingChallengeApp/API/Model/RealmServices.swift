@@ -10,7 +10,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-fileprivate let currentSchemaVersion: UInt64 = 5
+private let currentSchemaVersion: UInt64 = 5
 
 typealias RealmObjectResult<T> = ((_: T) -> Void)
 
@@ -20,7 +20,7 @@ class RealmServices {
         //Setup realm
         let config = Realm.Configuration(
             schemaVersion: currentSchemaVersion,
-            migrationBlock: { migration, oldSchemaVersion in
+            migrationBlock: { _, _ in
                 print("migration succeeded")
         })
         Realm.Configuration.defaultConfiguration = config
@@ -39,13 +39,17 @@ class RealmServices {
         NotificationCenter.default.post(name: NSNotification.Name("RealmError"), object: error)
     }
     
-    func observeRealmErrors(in vc: UIViewController, completion: @escaping (Error?) -> Void) {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("RealmError"),
-                                               object: nil,
-                                               queue: nil) { (notification) in
-                                                completion(notification.object as? Error)
-        }
-    }
+  /*
+   func observeRealmErrors(in vc: UIViewController, completion: @escaping (Error?) -> Void) {
+       NotificationCenter.default
+         .addObserver(forName: NSNotification.Name("RealmError"),
+                      object: nil,
+                      queue: nil) { (notification) in
+                       completion(notification.object as? Error)
+     }
+   }
+   */
+    
     
     func stopObservingErrors(in vc: UIViewController) {
         NotificationCenter.default.removeObserver(vc, name: NSNotification.Name("RealmError"), object: nil)
@@ -56,7 +60,7 @@ class RealmServices {
         return Array(realmResults)
 
     }
-    func getObjects<T: Object>(filter:String) -> [T] {
+    func getObjects<T: Object>(filter: String) -> [T] {
         let realmResults = realm.objects(T.self).filter(filter)
         return Array(realmResults)
 

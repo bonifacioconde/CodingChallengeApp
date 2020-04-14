@@ -13,7 +13,7 @@ enum MasterViewModelResult {
     case done
 }
 
-protocol MasterViewCoordinatorDelegate {
+protocol MasterViewCoordinatorDelegate: class {
     func showDetail(from album: RMAlbum?)
 }
 
@@ -24,8 +24,8 @@ class MasterViewModel {
     
     let searchNetwork: SearchNetwork = SearchNetwork()
     
-    var coordinatorDelegate: MasterViewCoordinatorDelegate?
-    var resultClosure: ((MasterViewModelResult)->())?
+    weak var coordinatorDelegate: MasterViewCoordinatorDelegate?
+    var resultClosure: ((MasterViewModelResult) -> Void)?
     
     init(source: AlbumsDataSource) {
         self.dataSource = source
@@ -43,8 +43,7 @@ class MasterViewModel {
         if !isUpToDate {
             //print("passed more than a 5 minutess: Update!")
             requestList()
-        }
-        else {
+        } else {
             //print("less than a 5 minutes, do not update")
             self.dataSource.data = Array(latestResult.results)
             self.resultClosure?(.done)
@@ -87,7 +86,7 @@ class MasterViewModel {
             self.dataSource.data = Array(rmAlbumResult.results)
             self.resultClosure?(.done)
             self.resultClosure?(.cacheDate(rmAlbumResult.dateSaved))
-        }, fail: { rmAlbums in
+        }, fail: { _ in
             
         })
     }

@@ -19,7 +19,7 @@ extension Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZZZ"
         //formatter.timeZone = TimeZone(abbreviation: "GMT")
-        formatter.timeZone = TimeZone(secondsFromGMT:0)
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         let defaultTimeZoneStr = formatter.string(from: self)
         return defaultTimeZoneStr
     }

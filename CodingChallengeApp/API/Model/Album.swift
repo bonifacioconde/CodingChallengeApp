@@ -12,7 +12,7 @@ import RealmSwift
 
 class AlbumResult: Codable {
     enum CodingKeys: String, CodingKey {
-        case results = "results"
+        case results
     }
 
     public var results: [Album]

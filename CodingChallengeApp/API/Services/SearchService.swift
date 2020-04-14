@@ -13,13 +13,17 @@ enum SearchService {
     case search(parameters: [String: Any])
 }
 
-let SearchServiceProvider = MoyaProvider<SearchService>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])
+let SearchServiceProvider = MoyaProvider<SearchService>(
+  plugins: [
+    NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
+  ]
+)
 
 
 enum SearchKey: String, RawEnumProtocol {
-    case term = "term"
-    case country = "country"
-    case media = "media"
+    case term
+    case country
+    case media
     
     public var value: Any? {
         return self.rawValue

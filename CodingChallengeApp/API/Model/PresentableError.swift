@@ -14,9 +14,13 @@ public class PresentableError: Error {
     private(set) public var message: String
     private(set) public var code: Int?
 
-    convenience public init() {
-        self.init(title: "Error!", message: "Oops! Something went wrong!\nHelp us improve your experience by sending an error report.")
-    }
+  convenience public init() {
+    let message = """
+    Oops! Something went wrong!\n
+    Help us improve your experience by sending an error report.
+    """
+    self.init(title: "Error!", message: message)
+  }
 
     convenience public init(message: String, code: Int? = nil) {
         self.init(title: "Error!", message: message, code: code)
@@ -28,4 +32,3 @@ public class PresentableError: Error {
         self.code = code
     }
 }
-
