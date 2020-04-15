@@ -6,10 +6,15 @@ target 'CodingChallengeApp' do
   use_frameworks!
 
   # Pods for CodingChallengeApp
-  pod 'Moya'#, '~> 13.0'
-  pod 'Kingfisher'#, '~> 4.0'
-  pod 'Realm'#, git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
-  pod 'RealmSwift'#, git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
-  pod 'SwiftLint'
-
+  pod 'Moya', '13.0.1'#, '~> 13.0'
+  pod 'Kingfisher', '4.10.1'#, '~> 4.0'
+  pod 'Realm', '4.3.2'#, git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
+  pod 'RealmSwift', '4.3.2'#, git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
+  pod 'SwiftLint', '0.39.1'
+  
+  target 'CodingChallengeAppTests' do
+    inherit! :search_paths
+  end
+  
 end
+

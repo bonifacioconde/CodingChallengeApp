@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1110"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F30F9C5C22FF204F00262900"
-               BuildableName = "CodingChallengeApp.app"
-               BlueprintName = "CodingChallengeApp"
-               ReferencedContainer = "container:CodingChallengeApp.xcodeproj">
+               BlueprintIdentifier = "2343909AC8D1F3D90428C47DD905223E"
+               BuildableName = "Pods_CodingChallengeAppTests.framework"
+               BlueprintName = "Pods-CodingChallengeAppTests"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B33CC8B2445A6E0008A83B4"
-               BuildableName = "CodingChallengeAppTests.xctest"
-               BlueprintName = "CodingChallengeAppTests"
-               ReferencedContainer = "container:CodingChallengeApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F30F9C5C22FF204F00262900"
-            BuildableName = "CodingChallengeApp.app"
-            BlueprintName = "CodingChallengeApp"
-            ReferencedContainer = "container:CodingChallengeApp.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -67,16 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F30F9C5C22FF204F00262900"
-            BuildableName = "CodingChallengeApp.app"
-            BlueprintName = "CodingChallengeApp"
-            ReferencedContainer = "container:CodingChallengeApp.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -15,11 +15,11 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
-  - Kingfisher
-  - Moya
-  - Realm
-  - RealmSwift
-  - SwiftLint
+  - Kingfisher (= 4.10.1)
+  - Moya (= 13.0.1)
+  - Realm (= 4.3.2)
+  - RealmSwift (= 4.3.2)
+  - SwiftLint (= 0.39.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -41,6 +41,6 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: b0bceaca8bea5c3b3b9214ee9c4bd8e913d5e7b3
+PODFILE CHECKSUM: 99fabd1b0826414614dafd71ba9b98103e161386
 
 COCOAPODS: 1.8.3

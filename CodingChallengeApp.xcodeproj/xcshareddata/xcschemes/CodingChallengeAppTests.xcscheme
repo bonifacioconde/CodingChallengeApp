@@ -5,22 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F30F9C5C22FF204F00262900"
-               BuildableName = "CodingChallengeApp.app"
-               BlueprintName = "CodingChallengeApp"
-               ReferencedContainer = "container:CodingChallengeApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -32,7 +16,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B33CC8B2445A6E0008A83B4"
+               BlueprintIdentifier = "8B33CC992445AAE3008A83B4"
                BuildableName = "CodingChallengeAppTests.xctest"
                BlueprintName = "CodingChallengeAppTests"
                ReferencedContainer = "container:CodingChallengeApp.xcodeproj">
@@ -67,8 +51,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F30F9C5C22FF204F00262900"
@@ -76,7 +59,7 @@
             BlueprintName = "CodingChallengeApp"
             ReferencedContainer = "container:CodingChallengeApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
