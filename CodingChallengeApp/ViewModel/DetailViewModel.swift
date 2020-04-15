@@ -41,8 +41,10 @@ class DetailViewModel {
         
         let parameter = ParameterBuilder().add(value: "\(trackId)", for: LookupKey.id).build()
         lookupNetwork.show(with: parameter, success: { (values) in
-            if let lookUpAlbum = Array(values.results.compactMap({ $0 })).first {
-                
+            if let lookUpAlbum = Array(
+              values.results.compactMap({ $0 })
+            ).first {
+              
                 //Save to realm
                 let rmAlbum = RMAlbum()
                 rmAlbum.trackName = lookUpAlbum.trackName ?? ""

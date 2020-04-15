@@ -10,34 +10,20 @@ import UIKit
 import Kingfisher
 
 public extension UIImageView {
-    func processLink(_ string: String?, with placeHolder: UIImage? = nil) {
-        if let string = string,
-          let url = URL(string: string),
-          UIApplication.shared.canOpenURL(url),
-          !string.contains("default") {
-            self.kf.setImage(with: url,
-                             placeholder: placeHolder,
-                             options: [.transition(.fade(0.25))],
-                             progressBlock: nil, completionHandler: nil)
-        } else {
-            self.image = placeHolder
-        }
-    }
-    
     func processLink(_ string: String?,
                      with placeHolder: UIImage? = nil,
-                     failure: @escaping (() -> Void)) {
-        if let string = string,
-          let url = URL(string: string),
+                     failure: (() -> Void)? = nil) {
+        if let unwrappedString = string,
+          let url = URL(string: unwrappedString),
           UIApplication.shared.canOpenURL(url),
-          !string.contains("default") {
+          !unwrappedString.contains("default") {
             self.kf.setImage(with: url,
                              placeholder: placeHolder,
                              options: [.transition(.fade(0.25))],
                              progressBlock: nil, completionHandler: nil)
         } else {
             self.image = placeHolder
-            failure()
+            failure?()
         }
     }
 }

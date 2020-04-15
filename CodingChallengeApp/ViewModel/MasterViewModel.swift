@@ -14,7 +14,7 @@ enum MasterViewModelResult {
 }
 
 protocol MasterViewCoordinatorDelegate: class {
-    func showDetail(from album: RMAlbum?)
+    func masterShowDetail(from album: RMAlbum?)
 }
 
 
