@@ -1,5 +1,5 @@
 //
-//  MasterControllerSpec.swift
+//  MasterControllerUISpec.swift
 //  CodingChallengeAppTests
 //
 //  Created by Bonz Condz on 16/04/2020.
@@ -12,35 +12,39 @@ import Nimble
 import CodingChallengeApp
 import Moya
 
-class MasterControllerSpec: QuickSpec {
+class MasterControllerUISpec: QuickSpec {
   
   override func spec() {
     
     var controller: MasterController!
-    var viewModel: MasterViewModel!
-    var dataSource: AlbumsDataSource!
+    var navigationController: UINavigationController!
 
     describe("The 'Master Controller Test'") {
       context("Can show screen") {
         ///
         afterEach {
           controller = nil
-          viewModel = nil
-          dataSource = nil
+          navigationController = nil
         }
         
         ///
         beforeEach {
-          dataSource = AlbumsDataSource()
-          viewModel = MasterViewModel(source: dataSource)
           controller = MasterController.instantiate(fromAppStoryboard: .main)
-          controller.viewModel = viewModel
-          viewModel.coordinatorDelegate = controller
-          controller.tableView.dataSource = dataSource
+          navigationController = UINavigationController(rootViewController: controller)
+          _ = controller.view
         }
         
         it("should have 40 datas loaded") {
           expect(controller.tableView.numberOfRows(inSection: 0)).to(equal(40))
+        }
+        
+        it("row is selected") {
+          let tableView = controller.tableView
+          let indexPath = IndexPath(row: 0, section: 0)
+
+          controller.tableView(tableView!, didSelectRowAt: indexPath)
+
+          expect(navigationController.viewControllers.last).toEventually(beAKindOf(DetailController.self))
         }
       }
     }

@@ -24,8 +24,8 @@
 		8BF9C4B724480B7A000C9797 /* ServiceMockPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9C4B624480B7A000C9797 /* ServiceMockPlugin.swift */; };
 		8BF9C4B9244815C6000C9797 /* detail.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BF9C4B8244815C6000C9797 /* detail.json */; };
 		8BF9C4BB24481616000C9797 /* LookupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9C4BA24481616000C9797 /* LookupSpec.swift */; };
-		8BF9C4BD24481A5E000C9797 /* MasterControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9C4BC24481A5E000C9797 /* MasterControllerSpec.swift */; };
-		8BF9C4BF24481DC3000C9797 /* DetailControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9C4BE24481DC3000C9797 /* DetailControllerSpec.swift */; };
+		8BF9C4BD24481A5E000C9797 /* MasterControllerUISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9C4BC24481A5E000C9797 /* MasterControllerUISpec.swift */; };
+		8BF9C4BF24481DC3000C9797 /* DetailControllerUISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9C4BE24481DC3000C9797 /* DetailControllerUISpec.swift */; };
 		F30F9C6122FF204F00262900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F9C6022FF204F00262900 /* AppDelegate.swift */; };
 		F30F9C6A22FF205000262900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30F9C6922FF205000262900 /* Assets.xcassets */; };
 		F30F9C9822FF20E700262900 /* LookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F9C7522FF20E700262900 /* LookupService.swift */; };
@@ -81,8 +81,8 @@
 		8BF9C4B624480B7A000C9797 /* ServiceMockPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMockPlugin.swift; sourceTree = "<group>"; };
 		8BF9C4B8244815C6000C9797 /* detail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = detail.json; sourceTree = "<group>"; };
 		8BF9C4BA24481616000C9797 /* LookupSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupSpec.swift; sourceTree = "<group>"; };
-		8BF9C4BC24481A5E000C9797 /* MasterControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterControllerSpec.swift; sourceTree = "<group>"; };
-		8BF9C4BE24481DC3000C9797 /* DetailControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerSpec.swift; sourceTree = "<group>"; };
+		8BF9C4BC24481A5E000C9797 /* MasterControllerUISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterControllerUISpec.swift; sourceTree = "<group>"; };
+		8BF9C4BE24481DC3000C9797 /* DetailControllerUISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerUISpec.swift; sourceTree = "<group>"; };
 		95CD33C675F49E2BEB812EA0 /* Pods-CodingChallengeApp-CodingChallengeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallengeApp-CodingChallengeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CodingChallengeApp-CodingChallengeAppTests/Pods-CodingChallengeApp-CodingChallengeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9975D9F9B0DFBDBE56919619 /* Pods_CodingChallengeApp_CodingChallengeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingChallengeApp_CodingChallengeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30F9C5D22FF204F00262900 /* CodingChallengeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingChallengeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +146,8 @@
 			children = (
 				8B2495542446A3C2004D01AC /* SearchSpec.swift */,
 				8BF9C4BA24481616000C9797 /* LookupSpec.swift */,
-				8BF9C4BC24481A5E000C9797 /* MasterControllerSpec.swift */,
-				8BF9C4BE24481DC3000C9797 /* DetailControllerSpec.swift */,
+				8BF9C4BC24481A5E000C9797 /* MasterControllerUISpec.swift */,
+				8BF9C4BE24481DC3000C9797 /* DetailControllerUISpec.swift */,
 				8BF9C4B624480B7A000C9797 /* ServiceMockPlugin.swift */,
 				8B33CC9E2445AAE3008A83B4 /* Info.plist */,
 			);
@@ -538,8 +538,8 @@
 				8BF9C4BB24481616000C9797 /* LookupSpec.swift in Sources */,
 				8B2495552446A3C2004D01AC /* SearchSpec.swift in Sources */,
 				8BF9C4B724480B7A000C9797 /* ServiceMockPlugin.swift in Sources */,
-				8BF9C4BD24481A5E000C9797 /* MasterControllerSpec.swift in Sources */,
-				8BF9C4BF24481DC3000C9797 /* DetailControllerSpec.swift in Sources */,
+				8BF9C4BD24481A5E000C9797 /* MasterControllerUISpec.swift in Sources */,
+				8BF9C4BF24481DC3000C9797 /* DetailControllerUISpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
