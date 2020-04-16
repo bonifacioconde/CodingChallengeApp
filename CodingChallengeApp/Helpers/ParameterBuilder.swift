@@ -18,7 +18,13 @@ public class ParameterBuilder {
     public init() {}
     
     public func add(value: Any, for key: RawEnumProtocol) -> ParameterBuilder {
-        self.param.updateValue(value, forKey: key.value as! String)
+      if key.value is String {
+        guard let kv = key.value as? String else {
+          return self
+        }
+        self.param.updateValue(value, forKey: kv)
+      }
+        
         return self
     }
     

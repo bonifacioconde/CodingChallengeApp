@@ -24,4 +24,3 @@ class DetailCoordinator: Coordinator {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-

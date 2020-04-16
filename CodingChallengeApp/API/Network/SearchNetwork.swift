@@ -8,8 +8,16 @@
 
 import Foundation
 
-class SearchNetwork: BaseNetwork {
-    func list(with parameters: [String: Any], complete: @escaping ((AlbumResult)->()), fail: @escaping (([RMAlbum]) -> ())) {
+protocol SearchNetworkableProtocol: class {
+  func list(with parameters: [String: Any],
+            complete: @escaping ((AlbumResult) -> Void),
+            fail: @escaping (([RMAlbum]) -> Void))
+}
+
+class SearchNetwork: BaseNetwork, SearchNetworkableProtocol {
+    func list(with parameters: [String: Any],
+              complete: @escaping ((AlbumResult) -> Void),
+              fail: @escaping (([RMAlbum]) -> Void)) {
         let service = SearchService.search(parameters: parameters)
         
 
@@ -19,5 +27,3 @@ class SearchNetwork: BaseNetwork {
         
     }
 }
-
-

@@ -30,8 +30,11 @@ class MasterCoordinator: Coordinator {
 
 extension MasterCoordinator: MasterViewCoordinatorDelegate {
     func showDetail(from album: Album?) {
-        guard let album = album else { return }
-        let detailCoordinator = DetailCoordinator(album: album, navigationController: self.window?.rootViewController as? UINavigationController)
+        guard
+          let album = album,
+          let rootNav = self.window?.rootViewController as? UINavigationController
+          else { return }
+        let detailCoordinator = DetailCoordinator(album: album, navigationController: rootNav)
         detailCoordinator.start()
     }
 }

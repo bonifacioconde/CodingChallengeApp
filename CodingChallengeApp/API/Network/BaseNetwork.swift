@@ -10,11 +10,13 @@ import Foundation
 import Result
 import Moya
 
-typealias NetworkFailureBlock = ((PresentableError?) -> ())
+typealias NetworkFailureBlock = ((PresentableError?) -> Void)
 
 /// Class responsible of processing and validating the network responses
 class BaseNetwork {
-    func processResponse<T>(result: Result<Moya.Response, MoyaError>, success: ((T) -> ())?, failure: NetworkFailureBlock?) where T: Codable {
+    func processResponse<T>(result: Result<Moya.Response, MoyaError>,
+                            success: ((T) -> Void)?,
+                            failure: NetworkFailureBlock?) where T: Codable {
         switch result {
         case let .success(response):
             self.validate(
@@ -23,8 +25,7 @@ class BaseNetwork {
                     do {
                         let data = try response.map(T.self)
                         success?(data)
-                    }
-                    catch let error {
+                    } catch let error {
                         failure?(PresentableError(message: error.localizedDescription))
                     }
                 },
@@ -38,7 +39,9 @@ class BaseNetwork {
         }
     }
 
-    func processResponse(result: Result<Moya.Response, MoyaError>, success: (() -> ())?, failure: NetworkFailureBlock?) {
+    func processResponse(result: Result<Moya.Response, MoyaError>,
+                         success: (() -> Void)?,
+                         failure: NetworkFailureBlock?) {
         switch result {
         case let .success(response):
             self.validate(
@@ -56,16 +59,15 @@ class BaseNetwork {
         }
     }
 
-    func validate(_ response: Response, success: (() -> ()), error: ((PresentableError?) -> ())) {
+    func validate(_ response: Response, success: (() -> Void), error: ((PresentableError?) -> Void)) {
         if (response.statusCode >= 200) && (response.statusCode < 300) {
             success()
         } else {
-            var presentableError: PresentableError? = nil
+            var presentableError: PresentableError?
             do {
                 //TO DO: Handle error response and model
                 
-            }
-            catch {
+            } catch {
                 // Do Nothing
                 presentableError = PresentableError(message: "Please contact Administrator")
             }
@@ -77,7 +79,9 @@ class BaseNetwork {
 
 
 extension Decodable {
-    static func fromJSON<T:Decodable>(_ fileName: String, fileExtension: String="json", bundle: Bundle = .main) throws -> T {
+    static func fromJSON<T: Decodable>(_ fileName: String,
+                                       fileExtension: String = "json",
+                                       bundle: Bundle = .main) throws -> T {
         guard let url = bundle.url(forResource: fileName, withExtension: fileExtension) else {
             throw NSError(domain: NSURLErrorDomain, code: NSURLErrorResourceUnavailable)
         }

@@ -19,7 +19,7 @@ enum DetailViewModelResult {
 class DetailViewModel {
     var album: RMAlbum
     let lookupNetwork: LookupNetwork = LookupNetwork()
-    var resultClosure: ((DetailViewModelResult)->())?
+    var resultClosure: ((DetailViewModelResult) -> Void)?
     
     init(album: RMAlbum) {
         self.album = album
@@ -40,9 +40,11 @@ class DetailViewModel {
         }
         
         let parameter = ParameterBuilder().add(value: "\(trackId)", for: LookupKey.id).build()
-        lookupNetwork.show(with: parameter, success:  { (values) in
-            if let lookUpAlbum = Array(values.results.compactMap({ $0 })).first {
-                
+        lookupNetwork.show(with: parameter, success: { (values) in
+            if let lookUpAlbum = Array(
+              values.results.compactMap({ $0 })
+            ).first {
+              
                 //Save to realm
                 let rmAlbum = RMAlbum()
                 rmAlbum.trackName = lookUpAlbum.trackName ?? ""
