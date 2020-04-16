@@ -8,7 +8,13 @@
 
 import Foundation
 
-class SearchNetwork: BaseNetwork {
+protocol SearchNetworkableProtocol: class {
+  func list(with parameters: [String: Any],
+            complete: @escaping ((AlbumResult) -> Void),
+            fail: @escaping (([RMAlbum]) -> Void))
+}
+
+class SearchNetwork: BaseNetwork, SearchNetworkableProtocol {
     func list(with parameters: [String: Any],
               complete: @escaping ((AlbumResult) -> Void),
               fail: @escaping (([RMAlbum]) -> Void)) {

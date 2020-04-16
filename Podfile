@@ -13,7 +13,11 @@ target 'CodingChallengeApp' do
   pod 'SwiftLint', '0.39.1'
   
   target 'CodingChallengeAppTests' do
-    inherit! :search_paths
+    #inherit! :search_paths
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'Realm/Headers'
+    pod 'Moya', '13.0.1'
   end
   
 end

@@ -43,7 +43,10 @@ extension SearchService: BaseService {
     }
     
     var sampleData: Data {
-        return Data()
+        guard let url = Bundle.main.path(forResource: "search", ofType: "json") else {
+          return Data()
+        }
+        return try! Data(contentsOf: URL(fileURLWithPath: url))
     }
     
     var task: Task {

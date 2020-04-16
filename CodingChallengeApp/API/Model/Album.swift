@@ -97,3 +97,15 @@ extension RMAlbum {
         return nil
     }
 }
+
+extension AlbumResult: Equatable {
+  static func == (lhs: AlbumResult, rhs: AlbumResult) -> Bool {
+    return lhs.results == rhs.results
+  }
+}
+
+extension Album: Equatable {
+  static func == (lhs: Album, rhs: Album) -> Bool {
+    return lhs.trackId == rhs.trackId
+  }
+}

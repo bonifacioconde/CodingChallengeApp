@@ -45,8 +45,11 @@ extension LookupService: BaseService {
         return .get
     }
     
-    var sampleData: Data {
-        return Data()
+     var sampleData: Data {
+        guard let url = Bundle.main.path(forResource: "detail", ofType: "json") else {
+          return Data()
+        }
+        return try! Data(contentsOf: URL(fileURLWithPath: url))
     }
     
     var task: Task {
