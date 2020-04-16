@@ -12,3 +12,6 @@ This time i used Realm library to persist data. Not so complicated and easy to m
 
 ## Architecture
 I used MVVM as this as to separate responsibilites of Displaying UI and making API request. Its also flexible when we will add new features we can add or reuse existing funtionalites. The MVVM currently writted is not the pure approach is it relies on Closured to have updates on UI sides. 
+
+## Unit Tests
+Used Quick and Nimble libraries to help me do Unit test cases of my classes 
