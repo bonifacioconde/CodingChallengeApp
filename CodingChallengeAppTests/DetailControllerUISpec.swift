@@ -1,5 +1,5 @@
 //
-//  DetailControllerSpec.swift
+//  DetailControllerUISpec.swift
 //  CodingChallengeAppTests
 //
 //  Created by Bonz Condz on 16/04/2020.
@@ -13,7 +13,7 @@ import Nimble
 import CodingChallengeApp
 import Moya
 
-class DetailControllerSpec: QuickSpec {
+class DetailControllerUISpec: QuickSpec {
   
   override func spec() {
     
