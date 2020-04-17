@@ -29,7 +29,7 @@ class DetailController: UIViewController {
 
 extension DetailController {
     func setupViewModel() {
-        viewModel.resultClosure = { type in
+        viewModel.detailResultClosure = { type in
             switch type {
             case .image(let urlString):
                 self.artworkImageView.processLink(urlString, with: UIImage(named: "ic-large-movie-poster"))

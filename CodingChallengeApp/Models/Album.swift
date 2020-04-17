@@ -96,6 +96,20 @@ extension RMAlbum {
         }
         return nil
     }
+  
+  static func makeRMAlbum(from album: Album) -> RMAlbum {
+    let rmAlbum: RMAlbum = RMAlbum()
+    rmAlbum.trackName = album.trackName ?? ""
+    rmAlbum.artworkLarge = album.artworkLarge ?? ""
+    rmAlbum.artworkMedium = album.artworkMedium ?? ""
+    rmAlbum.artworkSmall = album.artworkSmall ?? ""
+    rmAlbum.price.value = album.price
+    rmAlbum.genre = album.genre ?? ""
+    rmAlbum.desc = album.desc ?? ""
+    rmAlbum.currency = album.currency ?? ""
+    rmAlbum.trackId.value = album.trackId
+    return rmAlbum
+  }
 }
 
 extension AlbumResult: Equatable {

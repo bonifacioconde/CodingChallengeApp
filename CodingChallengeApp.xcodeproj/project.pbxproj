@@ -141,6 +141,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8B07241E24495679005BB928 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B891C0823D14F6A0009C4A4 /* RealmServices.swift */,
+				F30F9C9122FF20E700262900 /* AppStoryboard.swift */,
+				F30F9C6022FF204F00262900 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		8B33CC9B2445AAE3008A83B4 /* CodingChallengeAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,13 +173,13 @@
 			path = ResponseJSON;
 			sourceTree = "<group>";
 		};
-		8B884E4823D1AC860056058B /* DataSource */ = {
+		8B884E4823D1AC860056058B /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
 				8B884E4923D1ACA50056058B /* BaseDataSource.swift */,
 				8B884E4B23D1ACB50056058B /* AlbumsDataSource.swift */,
 			);
-			path = DataSource;
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		8B891C0B23D1596A0009C4A4 /* Network */ = {
@@ -187,7 +197,6 @@
 			children = (
 				8B33CCA72445B9D9008A83B4 /* ResponseJSON */,
 				8B891C0B23D1596A0009C4A4 /* Network */,
-				F30F9C7B22FF20E700262900 /* Model */,
 				F30F9C7422FF20E700262900 /* Services */,
 			);
 			path = API;
@@ -234,15 +243,15 @@
 		F30F9C5F22FF204F00262900 /* CodingChallengeApp */ = {
 			isa = PBXGroup;
 			children = (
-				8B884E4823D1AC860056058B /* DataSource */,
+				8B884E4823D1AC860056058B /* DataSources */,
+				F30F9C7B22FF20E700262900 /* Models */,
 				8B891C1023D159DA0009C4A4 /* API */,
-				F30F9C9122FF20E700262900 /* AppStoryboard.swift */,
+				8B07241E24495679005BB928 /* App */,
 				F30F9C7D22FF20E700262900 /* Extensions */,
 				F30F9C9222FF20E700262900 /* Helpers */,
-				F30F9C8A22FF20E700262900 /* View */,
-				F30F9C8722FF20E700262900 /* ViewController */,
-				F30F9C7822FF20E700262900 /* ViewModel */,
-				F30F9C6022FF204F00262900 /* AppDelegate.swift */,
+				F30F9C8A22FF20E700262900 /* Views */,
+				F30F9C8722FF20E700262900 /* ViewControllers */,
+				F30F9C7822FF20E700262900 /* ViewModels */,
 				8BAA5EFE24458C5E0074CC88 /* Resources */,
 				F30F9C6E22FF205000262900 /* Info.plist */,
 			);
@@ -259,23 +268,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		F30F9C7822FF20E700262900 /* ViewModel */ = {
+		F30F9C7822FF20E700262900 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				F30F9C7922FF20E700262900 /* MasterViewModel.swift */,
 				F30F9C7A22FF20E700262900 /* DetailViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		F30F9C7B22FF20E700262900 /* Model */ = {
+		F30F9C7B22FF20E700262900 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F30F9C7C22FF20E700262900 /* Album.swift */,
-				8B891C0823D14F6A0009C4A4 /* RealmServices.swift */,
 				8B891C0E23D159C20009C4A4 /* PresentableError.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F30F9C7D22FF20E700262900 /* Extensions */ = {
@@ -290,24 +298,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F30F9C8722FF20E700262900 /* ViewController */ = {
+		F30F9C8722FF20E700262900 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				F30F9C8822FF20E700262900 /* DetailController.swift */,
 				F30F9C8922FF20E700262900 /* MasterController.swift */,
 				8B7C01A323CF794A00923A28 /* AppNavigationController.swift */,
 			);
-			path = ViewController;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		F30F9C8A22FF20E700262900 /* View */ = {
+		F30F9C8A22FF20E700262900 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F30F9C8B22FF20E700262900 /* LaunchScreen.storyboard */,
 				F30F9C8D22FF20E700262900 /* Main.storyboard */,
 				F30F9C8F22FF20E700262900 /* Cell */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F30F9C8F22FF20E700262900 /* Cell */ = {
