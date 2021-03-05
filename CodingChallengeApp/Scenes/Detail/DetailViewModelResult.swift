@@ -15,3 +15,23 @@ enum DetailViewModelResult {
   case name(String?)
   case genre(String?)
 }
+
+extension DetailViewModelResult: Equatable {
+  static func == (
+    lhs: DetailViewModelResult,
+    rhs: DetailViewModelResult
+  ) -> Bool {
+    if case .image = lhs, case .image = rhs {
+      return true
+    } else if case .description = lhs, case  .description = rhs {
+      return true
+    } else if case  .price = lhs, case  .price = rhs {
+      return true
+    } else if case  .name = lhs, case  .name = rhs {
+      return true
+    } else if case  .genre = lhs, case  .genre = rhs {
+      return true
+    }
+    return false
+  }
+}

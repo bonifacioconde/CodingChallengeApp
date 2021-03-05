@@ -52,7 +52,11 @@ class DetailControllerTests: QuickSpec {
         }
         
         it("should have shown data") {
-          
+          expect(vc.detailDescriptionLabel.text).toNot(beNil())
+          expect(vc.priceLabel.text).toNot(beNil())
+          expect(vc.trackNameLabel.text).toNot(beNil())
+          expect(vc.genreLabel.text).toNot(beNil())
+          expect(vc.artworkImageView.image).toNot(beNil())
         }
       }
     }

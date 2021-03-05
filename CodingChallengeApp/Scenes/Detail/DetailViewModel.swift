@@ -48,11 +48,12 @@ extension DetailViewModel {
 
 private extension DetailViewModel {
   func setupResult(from val: RMAlbum) {
+    albumCellVM.album = val
     resultClosure?(.image(val.availableLargeImage()))
     resultClosure?(.description("Description:\n\(val.desc )"))
-    resultClosure?(.price("Price: \(val.priceFormatted() ?? "")"))
-    resultClosure?(.name("Track: \(val.trackName )"))
-    resultClosure?(.genre("Genre: \(val.genre )"))
+    resultClosure?(.price(albumCellVM.price))
+    resultClosure?(.name(albumCellVM.track))
+    resultClosure?(.genre(albumCellVM.genre))
   }
 }
 
