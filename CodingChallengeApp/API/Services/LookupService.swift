@@ -9,29 +9,19 @@
 import Foundation
 import Moya
 
+let LookupServiceProvider = MoyaProvider<LookupService>(
+  plugins: [
+    NetworkLoggerPlugin(
+      verbose: true,
+      responseDataFormatter: JSONResponseDataFormatter
+    )
+  ]
+)
+
 enum LookupService {
     case lookup(parameters: [String: Any])
 }
 
-let LookupServiceProvider = MoyaProvider<LookupService>(
-  plugins: [
-    NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
-  ]
-)
-
-enum LookupKey: String, RawEnumProtocol {
-    case id
-    case amgArtistId
-    case entity
-    case sort
-    case upc
-    case amgAlbumId
-    case isbn
-    
-    public var value: Any? {
-        return self.rawValue
-    }
-}
 
 extension LookupService: BaseService {
     var path: String {

@@ -15,20 +15,12 @@ enum SearchService {
 
 let SearchServiceProvider = MoyaProvider<SearchService>(
   plugins: [
-    NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
+    NetworkLoggerPlugin(
+      verbose: true,
+      responseDataFormatter: JSONResponseDataFormatter
+    )
   ]
 )
-
-
-enum SearchKey: String, RawEnumProtocol {
-    case term
-    case country
-    case media
-    
-    public var value: Any? {
-        return self.rawValue
-    }
-}
 
 extension SearchService: BaseService {
     var path: String {

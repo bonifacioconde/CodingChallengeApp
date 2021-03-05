@@ -19,10 +19,10 @@ class MasterCoordinator: Coordinator {
         let navVC = AppNavigationController.instantiate(fromAppStoryboard: .main)
         
         
-        //let vc = MasterViewController.instantiate(fromAppStoryboard: .main)
-        //masterViewModel.coordinatorDelegate = self
-        //vc.viewModel = masterViewModel
-        //(navVC.viewControllers.first as? MasterViewController)?.viewModel = masterViewModel
+        // let vc = MasterViewController.instantiate(fromAppStoryboard: .main)
+        // masterViewModel.coordinatorDelegate = self
+        // vc.viewModel = masterViewModel
+        // (navVC.viewControllers.first as? MasterViewController)?.viewModel = masterViewModel
         
         self.window?.rootViewController = navVC
     }

@@ -17,7 +17,7 @@ typealias RealmObjectResult<T> = ((_: T) -> Void)
 class RealmServices {
   
   class func setup() {
-    //Setup realm
+    // Setup realm
     let config = Realm.Configuration(
       schemaVersion: currentSchemaVersion,
       migrationBlock: { _, _ in
@@ -54,7 +54,7 @@ class RealmServices {
   func stopObservingErrors(in vc: UIViewController) {
     NotificationCenter.default.removeObserver(vc, name: NSNotification.Name("RealmError"), object: nil)
   }
-  //Fetch object
+  // Fetch object
   func getObjects<T: Object>() -> [T] {
     let realmResults = realm.objects(T.self)
     return Array(realmResults)
@@ -66,7 +66,7 @@ class RealmServices {
     
   }
   
-  //Save Object
+  // Save Object
   func saveRealm<T: Object>(_ object: T) {
     do {
       try realm.write {
@@ -76,7 +76,7 @@ class RealmServices {
       post(error)
     }
   }
-  //Update Object
+  // Update Object
   func updateRealm<T: Object>(_ object: T, with dictionary: [String: Any?]) {
     do {
       try realm.write {
@@ -88,7 +88,7 @@ class RealmServices {
       post(error)
     }
   }
-  //Delete Object
+  // Delete Object
   func deleteRealm<T: Object>(_ object: T) {
     do {
       try realm.write {

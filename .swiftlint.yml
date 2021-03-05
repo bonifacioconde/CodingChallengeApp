@@ -11,7 +11,11 @@ disabled_rules:
 # These are areas that are excluded from scan
 excluded:
   - Pods
-  - OtherFoldersToExclude
+    - Vendors
+    - Tests
+    - UITests
+    - CodingChallengeApp/Helpers/R-Swift
+    
 force_cast: warning
 # These are the areas that SwiftLint scans.
 included:
