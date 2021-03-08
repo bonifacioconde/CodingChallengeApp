@@ -168,6 +168,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0645CA6825F22C0600FBE756 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8BF9C4BC24481A5E000C9797 /* MasterControllerTests.swift */,
+				0645CA5E25F2152200FBE756 /* MasterViewModelTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0645CA6D25F22C0C00FBE756 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8BF9C4BE24481DC3000C9797 /* DetailControllerTests.swift */,
+				0645CA6425F217B700FBE756 /* DetailViewModelTests.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		0651101925F0721600A0E272 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,10 +264,8 @@
 		066EF5D825F1B9AC00313C59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8BF9C4BC24481A5E000C9797 /* MasterControllerTests.swift */,
-				8BF9C4BE24481DC3000C9797 /* DetailControllerTests.swift */,
-				0645CA5E25F2152200FBE756 /* MasterViewModelTests.swift */,
-				0645CA6425F217B700FBE756 /* DetailViewModelTests.swift */,
+				0645CA6825F22C0600FBE756 /* Main */,
+				0645CA6D25F22C0C00FBE756 /* Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -265,6 +281,7 @@
 		066EF5EA25F1BB6300313C59 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8BF9C4B624480B7A000C9797 /* ServiceMockPlugin.swift */,
 				066EF5EB25F1BB7D00313C59 /* MockLookupNetwork.swift */,
 				066EF60025F1CA2500313C59 /* MockupServiceProvider.swift */,
 			);
@@ -345,7 +362,6 @@
 				8B2495542446A3C2004D01AC /* SearchSpec.swift */,
 				8BF9C4BA24481616000C9797 /* LookupSpec.swift */,
 				066EF5D825F1B9AC00313C59 /* Scenes */,
-				8BF9C4B624480B7A000C9797 /* ServiceMockPlugin.swift */,
 				8B33CC9E2445AAE3008A83B4 /* Info.plist */,
 			);
 			path = CodingChallengeAppTests;
